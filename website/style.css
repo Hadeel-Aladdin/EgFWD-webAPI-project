@@ -16,36 +16,9 @@ body{
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
 }
-
-.holder{
-
-}
 .entry{
     background: rgba(81, 115, 79, .6);
     /* display: block; */
-}
-
-#entryHolder{
-
-}
-
-#date{
-
-}
-
-#temp{
-
-}
-
-#content{
-
-}
-
-.headline {
-
-}
-.title{
-
 }
 
 /*  Basic Styling To Override Default For Basic HTML Elements */
@@ -76,9 +49,9 @@ button{
     border: none;
     box-shadow: 2px 4px 5px #3a5a40;
 }
-/* button:hover{
+button:active{
     background-color: rgb(81, 115, 79);
-} */
+}
 h1{
     font-size: 36px;
 }

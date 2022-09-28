@@ -21,3 +21,20 @@ app.use(express.static('website'));
 
 // Setup Server
 const port = 8022;
+app.listen(port, ()=> {
+  console.log('Hi from the server!☺');
+});
+
+weatherInfo = {};
+app.post('/weather', (request, response) => {
+    weatherInfo.desc = request.body.weatherDescription;
+    weatherInfo.date = request.body.reqTime;
+    weatherInfo.userMessage = request.body.content;
+    console.log('POST request has been handeled succesfuly!!☻ thanks God ♥');
+    console.log(weatherInfo);
+    response.send(weatherInfo);
+});
+
+app.get('/display_data', (req, res) => {
+  res.send(weatherInfo);
+});

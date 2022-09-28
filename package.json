@@ -1,0 +1,26 @@
+{
+  "name": "weather_api",
+  "version": "1.0.0",
+  "description": "A weather api application to fetch GET and POST requestes form a local server",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hadeel-Aladdin/EgFWD-webAPI-project.git"
+  },
+  "author": "Hadeel Aladdin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hadeel-Aladdin/EgFWD-webAPI-project/issues"
+  },
+  "homepage": "https://github.com/Hadeel-Aladdin/EgFWD-webAPI-project#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.20"
+  }
+}

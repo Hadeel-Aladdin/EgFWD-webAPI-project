@@ -1,7 +1,7 @@
 /*jshint esversion: 9*/
 
 // Setup empty JS object to act as endpoint for all routes
-projectData = {};
+weatherInfo = {};
 
 // Require Express to run server and routes
 const express = require('express');
@@ -21,20 +21,33 @@ app.use(express.static('website'));
 
 // Setup Server
 const port = 8022;
-app.listen(port, ()=> {
-  console.log('Hi from the server!☺');
+app.listen(port, () => {
+    // Feedback to test that the server is running
+    console.log('Hello from the server!☺');
 });
 
-weatherInfo = {};
+// Handel GET requests
+app.get('/display_data', (req, res) => {
+    // Test the GET method is working
+    console.log('Ther is a GET request');
+    res.send(weatherInfo);
+});
+
+// Handel POST requests
 app.post('/weather', (request, response) => {
-    weatherInfo.desc = request.body.weatherDescription;
+    // Check the request weather data if it 'undefined' (in case of there is no city with
+    // this zip code) or not to handel this case before it gose to the
+    // client-side as weatherInfo.desc = 'undefined'
+    if (request.body.weatherDescription) {
+        weatherInfo.desc = request.body.weatherDescription;
+    }
+    else {
+        weatherInfo.desc = '';
+    }
     weatherInfo.date = request.body.reqTime;
     weatherInfo.userMessage = request.body.content;
-    console.log('POST request has been handeled succesfuly!!☻ thanks God ♥');
+    // Test the POST method is working
+    console.log('There is a sPOST request has been handeled succesfuly!!☻ thanks God ♥');
     console.log(weatherInfo);
     response.send(weatherInfo);
-});
-
-app.get('/display_data', (req, res) => {
-  res.send(weatherInfo);
 });
